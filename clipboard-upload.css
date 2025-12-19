@@ -1,39 +1,73 @@
-/* 粘贴提示样式 */
-.clipboard-upload-hint {
-    padding-top: 15px;
-    font-size: 16px;
+/* 顶部固定提示语 - 统一前缀 wpcp- */
+.wpcp-top-hint {
+    position: fixed;
+    top: 32px; /* Admin Bar 下方 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999998;
+    background: #fff;
     color: #d63638;
+    padding: 6px 20px;
+    border-radius: 0 0 4px 4px;
+    border: 1px solid #c3c4c7;
+    border-top: none;
+    font-size: 16px;
     font-weight: 600;
-    text-align: center;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    pointer-events: none;
 }
 
-/* 反馈进度条外层 */
-.clipboard-feedback-wrap {
-    width: 100%;
-    margin-top: 15px;
-    text-align: center;
+/* 进度反馈容器 */
+#wpcp-feedback-wrap {
+    position: fixed;
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    z-index: 999999;
+    pointer-events: none;
 }
 
-/* 进度条背景 */
-.clipboard-feedback-wrap .cb-bar-bg {
-    height: 6px;
-    background: #dcdcde;
+.wpcp-feedback-content {
+    background: #fff;
+    padding: 14px;
+    border-left: 4px solid #2271b1;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border-radius: 2px;
+}
+
+/* 状态颜色 */
+.wpcp-feedback-content.wpcp-type-info { border-left-color: #2271b1; }
+.wpcp-feedback-content.wpcp-type-success { border-left-color: #00a32a; }
+.wpcp-feedback-content.wpcp-type-error { border-left-color: #d63638; }
+
+.wpcp-msg {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1d2327;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.wpcp-bar-bg {
+    height: 5px;
+    background: #f0f0f1;
     border-radius: 3px;
-    margin: 0 40px;
     overflow: hidden;
 }
 
-/* 进度条填充 */
-.clipboard-feedback-wrap .cb-bar {
+.wpcp-bar {
     height: 100%;
-    background: #46c46c;
-    width: 0%;
-    transition: width 0.2s;
+    width: 0;
+    background-color: #2271b1;
+    transition: width 0.4s cubic-bezier(0.1, 0.7, 1.0, 0.1);
 }
 
-/* 反馈文字 */
-.clipboard-feedback-wrap .cb-msg {
-    font-size: 13px;
-    margin-top: 8px;
-    font-weight: 500;
+.wpcp-type-success .wpcp-bar { background-color: #00a32a; }
+.wpcp-type-error .wpcp-bar { background-color: #d63638; }
+
+/* 适配移动端 */
+@media screen and (max-width: 782px) {
+    .wpcp-top-hint { top: 46px; font-size: 12px; }
+    .media-modal .wpcp-top-hint { top: 0; }
 }
