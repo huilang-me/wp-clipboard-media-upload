@@ -1,0 +1,39 @@
+/* 粘贴提示样式 */
+.clipboard-upload-hint {
+    padding-top: 15px;
+    font-size: 16px;
+    color: #d63638;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* 反馈进度条外层 */
+.clipboard-feedback-wrap {
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* 进度条背景 */
+.clipboard-feedback-wrap .cb-bar-bg {
+    height: 6px;
+    background: #dcdcde;
+    border-radius: 3px;
+    margin: 0 40px;
+    overflow: hidden;
+}
+
+/* 进度条填充 */
+.clipboard-feedback-wrap .cb-bar {
+    height: 100%;
+    background: #46c46c;
+    width: 0%;
+    transition: width 0.2s;
+}
+
+/* 反馈文字 */
+.clipboard-feedback-wrap .cb-msg {
+    font-size: 13px;
+    margin-top: 8px;
+    font-weight: 500;
+}

@@ -1,0 +1,50 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Clipboard Upload for Media Library 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-19 10:00+0800\n"
+"PO-Revision-Date: 2025-12-19 10:05+0800\n"
+"Last-Translator: Huilang <https://huilang.me>\n"
+"Language-Team: Chinese (China)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"X-Domain: wp-clipboard-media-upload\n"
+
+#: wp-clipboard-media-upload.php:48
+msgid "Paste image here (Ctrl+V) to upload"
+msgstr "点击此处并按下 Ctrl+V 粘贴上传图片"
+
+#: wp-clipboard-media-upload.php:49
+msgid "Press Ctrl+V anywhere on this page to upload"
+msgstr "在此页面任何位置按下 Ctrl+V 即可直接上传"
+
+#: wp-clipboard-media-upload.php:50
+msgid "Uploading from clipboard..."
+msgstr "正在从剪贴板上传..."
+
+#: wp-clipboard-media-upload.php:51
+msgid "Upload successful!"
+msgstr "上传成功！"
+
+#: wp-clipboard-media-upload.php:52
+msgid "Upload failed: "
+msgstr "上传失败："
+
+#: wp-clipboard-media-upload.php:53
+msgid "Network or server error"
+msgstr "网络连接或服务器错误"
+
+#: wp-clipboard-media-upload.php:62
+msgid "Permission denied."
+msgstr "权限不足，您没有上传文件的权限。"
+
+#: wp-clipboard-media-upload.php:66
+msgid "No file received."
+msgstr "未接收到文件。"
+
+#: wp-clipboard-media-upload.php:82
+msgid "Only image files (JPG, PNG, GIF, WEBP) are allowed."
+msgstr "只允许上传图片文件 (JPG, PNG, GIF, WEBP)。"
