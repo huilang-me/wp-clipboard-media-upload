@@ -1,7 +1,7 @@
-/* 顶部固定提示语 - 统一前缀 wpcp- */
+/* 顶部固定提示语 */
 .wpcp-top-hint {
     position: fixed;
-    top: 32px; /* Admin Bar 下方 */
+    top: 32px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 999998;
@@ -17,42 +17,51 @@
     pointer-events: none;
 }
 
-/* 进度反馈容器 */
-#wpcp-feedback-wrap {
+/* 进度反馈容器 - 改为列表堆叠 */
+#wpcp-feedback-container {
     position: fixed;
     top: 32px;
+    width: 280px;
     left: 50%;
     transform: translateX(-50%);
-    width: 300px;
     z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     pointer-events: none;
+}
+
+.wpcp-feedback-item {
+    transition: all 0.3s ease;
 }
 
 .wpcp-feedback-content {
     background: #fff;
-    padding: 14px;
+    padding: 12px;
     border-left: 4px solid #2271b1;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     border-radius: 2px;
+    pointer-events: auto; /* 允许点击防止消失？或者保持 none */
 }
 
-/* 状态颜色 */
 .wpcp-feedback-content.wpcp-type-info { border-left-color: #2271b1; }
 .wpcp-feedback-content.wpcp-type-success { border-left-color: #00a32a; }
 .wpcp-feedback-content.wpcp-type-error { border-left-color: #d63638; }
 
 .wpcp-msg {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     color: #1d2327;
-    margin-bottom: 10px;
-    display: block;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .wpcp-bar-bg {
-    height: 5px;
+    height: 4px;
     background: #f0f0f1;
-    border-radius: 3px;
+    border-radius: 2px;
     overflow: hidden;
 }
 
@@ -60,14 +69,13 @@
     height: 100%;
     width: 0;
     background-color: #2271b1;
-    transition: width 0.4s cubic-bezier(0.1, 0.7, 1.0, 0.1);
+    transition: width 0.3s ease;
 }
 
 .wpcp-type-success .wpcp-bar { background-color: #00a32a; }
 .wpcp-type-error .wpcp-bar { background-color: #d63638; }
 
-/* 适配移动端 */
 @media screen and (max-width: 782px) {
+    #wpcp-feedback-container { top: 50px; right: 10px; left: 10px; width: auto; }
     .wpcp-top-hint { top: 46px; font-size: 12px; }
-    .media-modal .wpcp-top-hint { top: 0; }
 }

@@ -3,7 +3,7 @@
  * Plugin Name: Clipboard Upload for Media Library
  * Plugin URI:  https://huilang.me/wp-clipboard-media-upload
  * Description: Allows users to paste images (Ctrl+V) directly into the Media Library, post editors, and the featured image modal. Supports EXIF cleaning and automatic selection.
- * Version:     1.0.1
+ * Version:     1.0.2
  * Author:      Huilang
  * Author URI:  https://huilang.me
  * Text Domain: wp-clipboard-media-upload
@@ -34,13 +34,13 @@ class WP_Clipboard_Media_Upload {
             'wp-clipboard-media-upload',
             plugin_dir_url( __FILE__ ) . 'clipboard-upload.css',
             [],
-            '1.0.1'
+            '1.0.2'
         );
         wp_enqueue_script(
             'wp-clipboard-media-upload',
             plugin_dir_url( __FILE__ ) . 'clipboard-upload.js',
             [ 'jquery', 'wp-i18n' ],
-            '1.0.1',
+            '1.0.2',
             true
         );
 
