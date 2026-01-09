@@ -1,70 +1,85 @@
 # Clipboard Upload for Media Library (剪贴板媒体上传助手)
 
-[![WordPress Version](https://img.shields.io/badge/WordPress-5.0+-21759b.svg)](https://wordpress.org/)
-[![License](https://img.shields.io/badge/License-GPLv2-green.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
-
 > [English Version](#english) | [中文版本](#chinese)
 
 ---
 
 <a name="english"></a>
+
 ## 🇬🇧 English Version
 
-**Clipboard Upload for Media Library** is a lightweight yet powerful WordPress plugin designed to streamline your media upload workflow. Stop the tedious cycle of "Save Image -> Find Folder -> Drag & Drop". Just copy an image from any source and paste it directly into your WordPress backend.
+**Clipboard Upload for Media Library** is a professional tool to streamline your WordPress media workflow. Skip the "Save-Search-Upload" cycle—simply copy any image and paste it directly into your site.
 
 ### ✨ Key Features
-- **🚀 Paste to Upload**: Supports `Ctrl+V` (or `Cmd+V`) in the Media Library, Post Editor, and Featured Image modal.
-- **✅ Smart Auto-Selection**: Automatically selects the uploaded image in the media modal—one click to set as featured image.
-- **🛡️ Privacy First**: Automatically strips EXIF/Metadata (GPS, camera info) upon upload to protect your privacy.
-- **📊 Real-time Feedback**: Includes a stylish progress bar and status notifications.
-- **🖼️ Modern Formats**: Full support for JPG, PNG, GIF, and WEBP.
-- **🌐 Fully Translatable**: Built-in support for English and Chinese.
 
-### 🛠️ Installation
-1. **Download**: Download the latest ZIP from the [Releases](../../releases) page.
-2. **Upload**: In your WordPress admin, go to **Plugins > Add New > Upload Plugin** and select the ZIP file.
-3. **Activate**: Click **Activate** and you are ready to go!
+* **🚀 Instant Paste**: Press `Ctrl+V` (or `Cmd+V`) in the Media Library, Post Editor, or Featured Image modal.
+* **🎨 On-the-Fly Processing**: **(New!)** Click the top hint to set custom rules:
+* **Center Crop**: e.g., `300x300` to square your image instantly.
+* **Smart Scaling**: Limit max width (e.g., `800`) or height to optimize file size before upload.
+
+
+* **✅ Auto-Selection**: Uploaded images are automatically selected in the media modal for one-click insertion.
+* **🛡️ Privacy Protection**: Automatically strips EXIF/Metadata (GPS, Camera info) to keep your data safe.
+* **📊 Queue & Progress**: Supports bulk pasting with a stacked real-time progress notification system.
+* **🖼️ Full Format Support**: JPG, PNG, GIF, and WEBP.
 
 ### 📖 Usage Guide
-- **Media Library**: Go to the Grid View and press `Ctrl+V` anywhere.
-- **Featured Image**: Click "Set featured image" and paste inside the pop-up modal.
-- **Native Upload Page**: Paste on the `/wp-admin/media-new.php` page; it will redirect to the edit screen after a successful upload.
+
+1. **Basic Upload**: Just press `Ctrl+V` on any media-related page.
+2. **Set Rules**: Click the **red hint text** at the top of the page.
+* Enter `300x300` for a center crop.
+* Enter `1200` to ensure no image exceeds 1200px width.
+* Leave empty to upload the original file.
+
+
+3. **Bulk Paste**: You can copy multiple images (from local folders) and paste them; the plugin will queue them automatically.
 
 ---
 
 <a name="chinese"></a>
+
 ## 🇨🇳 中文版本
 
-**剪贴板媒体上传助手 (Clipboard Upload for Media Library)** 是一款极简且高效的 WordPress 插件。它旨在彻底优化您的媒体上传流程，终结“保存图片 -> 寻找文件夹 -> 拖拽上传”的繁琐步骤。无论图片来自截图、设计软件还是网页，直接粘贴即可上传。
+**剪贴板媒体上传助手 (Clipboard Upload for Media Library)** 是一款为专业创作者设计的媒体流优化工具。它消除了“保存-查找-上传”的繁琐步骤，让你能够直接将剪贴板中的图片“秒传”到 WordPress。
 
 ### ✨ 核心功能
-- **🚀 粘贴即上传**: 支持在媒体库列表、文章编辑器、特色图片弹窗等位置直接按 `Ctrl+V` (或 `Cmd+V`) 上传。
-- **✅ 智能自动选中**: 在“设置特色图片”弹窗上传后，插件会自动勾选该图片，点击确认即可，一气呵成。
-- **🛡️ 隐私保护**: 上传时自动清洗图片的 EXIF/元数据（如地理位置、拍摄设备信息），保护您的隐私安全。
-- **📊 实时进度**: 内置优雅的进度条与状态提示，上传过程清晰可见。
-- **🖼️ 格式支持**: 完美支持 JPG, PNG, GIF 以及现代化的 WEBP 格式。
-- **🌐 双语支持**: 原生内置中英文语言包，完美适配中文环境。
 
-### 🛠️ 安装方法
-1. **下载**: 从 GitHub 的 [Releases](../../releases) 页面下载最新的 ZIP 压缩包。
-2. **上传**: 在 WordPress 后台，前往 **插件 > 安装插件 > 上传插件**，选择该 ZIP 文件。
-3. **启用**: 点击 **启用** 插件即可开始使用。
+* **🚀 粘贴即上传**: 支持在媒体库、文章编辑器、特色图片弹窗等位置按 `Ctrl+V` 直接上传。
+* **🎨 实时图像处理**: **(新功能!)** 点击页面顶部提示可开启即时处理模式：
+* **中心裁剪**: 输入如 `300x300`，上传前自动将图片裁切为正方形。
+* **等比缩放**: 设置限宽（如 `800`）或限高，在浏览器端完成压缩，节省服务器空间。
+
+
+* **✅ 智能自动选中**: 在特色图片弹窗上传后，插件会自动勾选该图片，点击确认即可。
+* **🛡️ 隐私保护**: 自动清洗图片 EXIF/元数据（屏蔽 GPS 位置、拍摄器材等信息）。
+* **📊 队列管理**: 支持多图批量粘贴，内置优雅的堆叠式进度条，状态清晰可见。
+* **🌐 原生体验**: 完美支持中英文，UI 设计贴合 WordPress 原生风格。
 
 ### 📖 使用指南
-- **媒体库**: 进入媒体库网格视图，在页面任意位置粘贴即可。
-- **特色图片**: 点击文章右侧的“设置特色图片”，在弹出的窗口中直接粘贴。
-- **原生上传页**: 在 `/wp-admin/media-new.php` 页面粘贴，上传成功后会自动跳转至该图片的编辑页面。
+
+1. **基础上传**: 在任何媒体管理页面直接粘贴即可。
+2. **设置规则**: 点击页面顶部**红色文字提示**。
+* 输入 `400x300`：执行中心裁剪。
+* 输入 `1000`：限制最大宽度为 1000px，高度自动按比例缩小。
+* 留空或取消：恢复原始尺寸上传。
+
+
+3. **批量粘贴**: 支持同时复制多个本地文件并粘贴，插件会依次自动处理上传队列。
 
 ---
 
 ## ⚙️ Technical Details / 技术细节
-- **Frontend**: Uses `MutationObserver` to ensure the paste listener attaches even to dynamically loaded modals.
-- **Backend**: Uses `media_handle_upload` for secure processing and `WP_Image_Editor` for metadata stripping.
+
+* **Frontend**: Built with vanilla JS and jQuery. Uses HTML5 `Canvas` for client-side image processing to reduce server load.
+* **Backend**: Securely handles uploads via `media_handle_upload` and enforces strict MIME-type validation.
+* **Privacy**: Leverages `WP_Image_Editor` to ensure processed images are clean of sensitive metadata.
 
 ## 📄 License / 开源协议
+
 This project is licensed under the [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html).
 
 ## 👤 Author / 作者
-**Huilang**
-- **Website**: [huilang.me](https://huilang.me)
-- **Plugin URI**: [https://huilang.me/wp-clipboard-media-upload/](https://huilang.me/wp-clipboard-media-upload/)
+
+**Huilang** - **Website**: [huilang.me](https://huilang.me)
+
+* **Plugin URI**: [https://huilang.me/wp-clipboard-media-upload/](https://huilang.me/wp-clipboard-media-upload/)

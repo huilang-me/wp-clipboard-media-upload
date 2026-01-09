@@ -3,7 +3,7 @@
  * Plugin Name: Clipboard Upload for Media Library
  * Plugin URI:  https://huilang.me/wp-clipboard-media-upload
  * Description: Allows users to paste images (Ctrl+V) directly into the Media Library, post editors, and the featured image modal. Supports EXIF cleaning and automatic selection.
- * Version:     1.0.2
+ * Version:     1.0.3
  * Author:      Huilang
  * Author URI:  https://huilang.me
  * Text Domain: wp-clipboard-media-upload
@@ -49,12 +49,20 @@ class WP_Clipboard_Media_Upload {
             'ajax_url' => admin_url('admin-ajax.php'),
             'nonce'    => wp_create_nonce('clipboard_upload_nonce'),
             'i18n'     => [
-                'hint'    => __( 'Paste image here (Ctrl+V) to upload', 'wp-clipboard-media-upload' ),
-                'hint_full' => __( 'Press Ctrl+V anywhere on this page to upload', 'wp-clipboard-media-upload' ),
-                'uploading' => __( 'Uploading from clipboard...', 'wp-clipboard-media-upload' ),
-                'success'   => __( 'Upload successful!', 'wp-clipboard-media-upload' ),
-                'error'     => __( 'Upload failed: ', 'wp-clipboard-media-upload' ),
-                'net_error' => __( 'Network or server error', 'wp-clipboard-media-upload' ),
+                'hint'         => __( 'Paste image here (Ctrl+V) to upload', 'wp-clipboard-media-upload' ),
+                'uploading'    => __( 'Uploading from clipboard...', 'wp-clipboard-media-upload' ),
+                'success'      => __( 'Upload successful!', 'wp-clipboard-media-upload' ),
+                'error'        => __( 'Upload failed: ', 'wp-clipboard-media-upload' ),
+                'net_error'    => __( 'Network or server error', 'wp-clipboard-media-upload' ),
+                // JS 交互新增翻译项
+                'cropping'     => __( ' - Cropping...', 'wp-clipboard-media-upload' ),
+                'scaling'      => __( ' - Scaling...', 'wp-clipboard-media-upload' ),
+                'mode_crop'    => __( 'Crop', 'wp-clipboard-media-upload' ),
+                'mode_width'   => __( 'Width', 'wp-clipboard-media-upload' ),
+                'mode_height'  => __( 'Height', 'wp-clipboard-media-upload' ),
+                'prompt_title' => __( 'Set image processing rules:', 'wp-clipboard-media-upload' ),
+                'prompt_desc'  => __( "1. Crop: '300x300'\n2. Max Width: '300'\n3. Max Height: '0x300'\n\nEmpty to disable.", 'wp-clipboard-media-upload' ),
+                'setting_hint' => __( "Click to set size:\n- 300x300: Center Crop\n- 300: Max Width\n- 0x300: Max Height", 'wp-clipboard-media-upload' ),
             ]
         ]);
     }
