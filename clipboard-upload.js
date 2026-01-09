@@ -64,20 +64,28 @@ jQuery(function ($) {
         const clipboardData = event.originalEvent.clipboardData;
         if (!clipboardData || !clipboardData.items) return;
 
-        // 遍历所有剪贴板项（处理多图粘贴）
-        for (let i = 0; i < clipboardData.items.length; i++) {
-            const item = clipboardData.items[i];
-            if (item.type.indexOf('image') === -1) continue;
+        // --- 修复处 1: 初始化一个真正的图片计数器 ---
+        let imageCount = 0;
+        
+        // 第一次遍历：统计共有多少张图片（可选，用于显示 "1/3" 这种格式）
+        const imageItems = Array.from(clipboardData.items).filter(item => item.type.indexOf('image') !== -1);
+        if (imageItems.length === 0) return;
 
-            event.preventDefault();
+        event.preventDefault();
+
+        // 遍历提取出的图片项
+        imageItems.forEach((item, index) => {
+            imageCount++; // 这里的 imageCount 才是准确的图片编号
             
             const file = item.getAsFile();
             let extension = item.type.split('/')[1] || 'png';
             if (extension === 'jpeg') extension = 'jpg';
-            const fileName = "pasted-" + Date.now() + "-" + i + "." + extension;
             
-            // 为每个文件创建独立的进度条
-            const feedback = createFeedbackItem(i18n.uploading + ` (${i+1})`);
+            // 使用 imageCount 确保文件名唯一且编号连续
+            const fileName = "pasted-" + Date.now() + "-" + imageCount + "." + extension;
+            
+            // --- 修复处 2: 使用 imageCount 显示编号 ---
+            const feedback = createFeedbackItem(i18n.uploading + ` (${imageCount})`);
             
             const formData = new FormData();
             formData.append('action', 'clipboard_image_upload');
@@ -94,7 +102,7 @@ jQuery(function ($) {
                     const xhr = new window.XMLHttpRequest();
                     xhr.upload.addEventListener("progress", function(evt) {
                         if (evt.lengthComputable) {
-                            const percentComplete = (evt.loaded / evt.total) * 90; // 留10%给服务器处理
+                            const percentComplete = (evt.loaded / evt.total) * 90;
                             feedback.update(percentComplete);
                         }
                     }, false);
@@ -104,7 +112,6 @@ jQuery(function ($) {
                     if (response.success) {
                         feedback.update(100, i18n.success, 'success');
                         
-                        // 逻辑：独立媒体页刷新
                         if ($('#drag-drop-area').length > 0 && $('.media-frame').length === 0) {
                             const $uploadResult = $('#media-items');
                             if ($uploadResult.length > 0) {
@@ -114,7 +121,6 @@ jQuery(function ($) {
                             }
                         }
                 
-                        // 逻辑：媒体库弹窗刷新
                         if (window.wp && wp.media) {
                             const frame = wp.media.frame;
                             if (frame) {
@@ -137,6 +143,6 @@ jQuery(function ($) {
                     feedback.update(0, i18n.net_error, 'error');
                 }
             });
-        }
+        });
     });
 });
